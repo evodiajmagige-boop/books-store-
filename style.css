@@ -30,6 +30,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden; /* Inazuia ukurasa mzima kusogeza pembeni */
 }
 
 /* Header & Navigation (Imebadilishwa kuwa na Rangi Iliyokolea badala ya Nyeupe) */
@@ -261,6 +262,13 @@ h2.section-title::after {
   box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15);
 }
 
+/* Table Responsive Container */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 /* Cart Table (Jedwali la Kikapu) */
 .cart-table {
   width: 100%;
@@ -372,8 +380,7 @@ footer p {
   
   /* Jedwali la Kikapu kwenye simu (Kuruhusu kusogeza pembeni) */
   .cart-table {
-    display: block;
-    overflow-x: auto;
     white-space: nowrap;
+    width: 100%; /* Kuhakikisha jedwali linachukua nafasi yote inaporuhusiwa */
   }
 }
