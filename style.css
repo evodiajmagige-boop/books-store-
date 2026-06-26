@@ -144,6 +144,8 @@ nav a:hover::after, nav a.active::after {
 /* Main Content Layout */
 .container {
   max-width: 1200px;
+  width: 100%;
+  min-width: 0; /* Inazuia yaliyomo (kama jedwali) kutanua ukurasa nje ya kioo */
   margin: 2rem auto;
   padding: 0 1.5rem;
   flex: 1; 
