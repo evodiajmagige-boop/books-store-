@@ -1,0 +1,310 @@
+/* style.css - Rangi Zilizoboreshwa (High Contrast & Colorful) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #10b981; /* Emerald Green (Kijani) */
+  --primary-dark: #059669;
+  --secondary-color: #f59e0b; /* Amber (Chungwa) */
+  --text-main: #1e293b; /* Rangi ya maandishi meusi */
+  --text-light: #64748b;
+  --bg-color: #e2e8f0; /* Rangi ya kijivu isiyokolea sana (Haitakuwa nyeupe tena) */
+  --header-bg: #1e293b; /* Rangi nyeusi/bluu iliyokolea kwa ajili ya Menyu ya Juu */
+  --white: #ffffff;
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --radius: 12px;
+}
+
+/* Reset basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-color); /* Background itakuwa ya kijivu, sio nyeupe */
+  color: var(--text-main);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header & Navigation (Imebadilishwa kuwa na Rangi Iliyokolea badala ya Nyeupe) */
+header {
+  background-color: var(--header-bg); /* Rangi ya giza kwenye menyu */
+  box-shadow: var(--shadow-md);
+  padding: 1.2rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 4px solid var(--primary-color); /* Mstari wa kijani chini ya menyu */
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--white); /* Logo itakuwa nyeupe */
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.logo span {
+  color: var(--primary-color); /* Neno "Vitabu" au nusu ya logo inaweza kuwa kijani */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #cbd5e1; /* Maandishi ya menyu yakiwa light gray */
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+nav a:hover, nav a.active {
+  color: var(--primary-color); /* Yakiguswa yanakuwa kijani */
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: var(--primary-color);
+  left: 0;
+  bottom: -5px;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after, nav a.active::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 8rem 1rem;
+  /* Hapa picha ipo kwa nyuma, juu yake kuna weusi kidogo (overlay) */
+  background: linear-gradient(to right, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.7)), url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover fixed;
+  color: var(--white);
+  border-radius: 0 0 30px 30px;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-md);
+  border-bottom: 5px solid var(--primary-color);
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.95;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+}
+
+/* Buttons (Vifungo vina rangi nzuri ya Kijani) */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.6);
+}
+
+/* Main Content Layout */
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  flex: 1; 
+}
+
+h2.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--text-main);
+  font-size: 2.2rem;
+  font-weight: 700;
+  position: relative;
+}
+
+h2.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 5px;
+  background: var(--primary-color);
+  margin: 15px auto 0 auto;
+  border-radius: 5px;
+}
+
+/* Grid Layout for Books */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+}
+
+/* Book Card (Kadi ya Kitabu sasa inajitenga na background) */
+.book-card {
+  background: var(--white); /* Kadi inabaki nyeupe ili vitabu vionekane vizuri */
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  transition: all 0.4s ease;
+  border: 1px solid #cbd5e1; /* Mpaka mzuri kwenye kadi */
+  display: flex;
+  flex-direction: column;
+}
+
+.book-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color); /* Kadi inabadilika kuwa ya kijani pembeni ikiguswa */
+}
+
+.book-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  transition: transform 0.5s ease;
+}
+
+.book-card:hover img {
+  transform: scale(1.03); 
+}
+
+.book-card h3 {
+  font-size: 1.2rem;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.book-price {
+  color: var(--secondary-color);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: auto 0 1.5rem 0;
+}
+
+/* Forms (Fomu za Mawasiliano na Akaunti) */
+.form-container {
+  max-width: 550px;
+  margin: 0 auto;
+  background: var(--white); /* Fomu pia inabaki nyeupe juu ya background ya kijivu */
+  padding: 3rem 2.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  border-top: 5px solid var(--primary-color); /* Rangi juu ya fomu */
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-main);
+  font-size: 0.95rem;
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  background-color: #f8fafc;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background-color: var(--white);
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15);
+}
+
+/* Cart Table (Jedwali la Kikapu) */
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.cart-table th, .cart-table td {
+  padding: 1.2rem 1.5rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.cart-table th {
+  background-color: var(--primary-color); /* Kichwa cha jedwali ni Kijani */
+  color: var(--white);
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cart-table td {
+  vertical-align: middle;
+}
+
+.cart-table img {
+  border-radius: 6px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Footer (Sehemu ya Chini inakuwa nyeusi sana kuvutia) */
+footer {
+  background-color: #0f172a; /* Rangi nyeusi sana */
+  color: #94a3b8;
+  text-align: center;
+  padding: 3rem 0;
+  margin-top: 4rem;
+  border-top: 5px solid var(--primary-color);
+}
+
+footer p {
+  font-size: 1rem;
+}

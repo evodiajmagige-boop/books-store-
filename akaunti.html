@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SomaVitabu - Akaunti</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">SomaVitabu</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Mwanzo</a></li>
+                <li><a href="vitabu.html">Vitabu</a></li>
+                <li><a href="kikapu.html">Kikapu</a></li>
+                <li><a href="kuhusu.html">Kuhusu Sisi</a></li>
+                <li><a href="mawasiliano.html">Mawasiliano</a></li>
+                <li><a href="akaunti.html" class="active">Akaunti</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Ingia Kwenye Akaunti</h2>
+        
+        <!-- Fomu ya Kuingia (Login Form) -->
+        <div class="form-container">
+            <form action="#">
+                <div class="form-group">
+                    <label for="barua">Barua Pepe (Email):</label>
+                    <input type="email" id="barua" placeholder="mfano@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="nywila">Nywila (Password):</label>
+                    <input type="password" id="nywila" placeholder="********" required>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Ingia</button>
+                
+                <p style="text-align: center; margin-top: 1.5rem;">
+                    Hauna akaunti? <a href="#" style="color: var(--primary-color); font-weight: bold;">Jisajili Hapa</a>.
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 SomaVitabu. Haki zote zimehifadhiwa.</p>
+    </footer>
+</body>
+</html>
